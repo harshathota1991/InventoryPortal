@@ -1,2 +1,2 @@
 # Online Inventory Portal
- This application is a "Inventory Management System". It enables the users to, insert new inventory to the database, search new inventory from the database, update the existing inventory. It also enables the users to print database search reports to excel and pdf. This application is developed using Jsp, Struts 2, Java, MySQL, CSS.
+Inventory management system - a application that tracks of inventory. It allows users to search, insert, update, delete inventory records and print department specific reports. Technologies used: Struts 2, JSP, JDBC, JavaScript, CSS and MySQL.
