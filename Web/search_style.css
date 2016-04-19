@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}	      
+}
+#section {
+   
+    padding:10px;	 	 
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+#table1{
+	
+	background-color:"#FFFFFF";
+	width:700px;
+	border:0px; 
+	 
+}

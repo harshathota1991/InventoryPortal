@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	
+<package name="default" namespace="/" extends="struts-default">
+
+<action name="insertAction" >
+<result>/insert.jsp</result>
+</action>
+
+<action name="insertValues" class="edu.gsu.snhp.action.InsertValuesAction" >
+<result name="success">/insertSuccess.jsp</result>
+<result name="failure">/insertError.jsp</result>
+</action>
+
+<action name="searchAction" >
+<result>/search.jsp</result>
+</action>
+
+<action name="searchValues" class="edu.gsu.snhp.action.SearchValuesAction">
+<result name="success">/searchSuccess.jsp</result>
+<result name="failure">/searchError.jsp</result>
+</action>
+
+<action name="insertSuccess">
+<result>/index.jsp</result>
+</action>
+
+<action name="selectUpdate" class="edu.gsu.snhp.action.UpdateValuesAction">
+<result name="success">/update.jsp</result>
+<result name="failure">/UpdateError.jsp</result>
+</action>
+
+<action name="updateInsertValues" class="edu.gsu.snhp.action.UpdateInsertValuesAction">
+<result name="success">/SearchUpdateDisplay.jsp</result>
+<result name="failure">/UpdateError.jsp</result>
+</action>
+
+<action name="updateSuccess">
+<result>/index.jsp</result>
+</action>
+
+<action name="reportAction">
+<result>/ReportSelection.jsp</result>
+</action>
+
+<action name="viewReportSelect">
+<result>/report.jsp</result>
+</action>
+<action name="viewReportExcel">
+<result>/ReportExcel.jsp</result>
+</action>
+<action name="viewReportPDF">
+<result>/ReportPDF.jsp</result>
+</action>
+
+
+<action name="generateReport" class="edu.gsu.snhp.action.GenerateReportAction" method="getGenerateView">
+<result name="success">/reportSuccess.jsp</result>
+<result name="failure">/reportFailure.jsp</result>
+</action>
+
+
+<action name="generateExcel" class="edu.gsu.snhp.action.GenerateReportAction" method="getGenerateExcel">
+<result name="success" type="stream">
+    <param name="contentDisposition">attachment;filename="${reportFile}"</param>
+    <param name="contentType">application/vnd.ms-excel</param>
+    <param name="inputName">inputStream</param>
+    <param name="bufferSize">1024</param>
+</result>
+</action>
+
+<action name="generatePDF" class="edu.gsu.snhp.action.GenerateReportAction" method="getGeneratePDF">
+<result name="success" type="stream">
+    <param name="contentDisposition">attachment;filename="SNHPDBreport.pdf"</param>
+    <param name="contentType">application/pdf</param>
+    <param name="inputName">inputStream</param>
+    <param name="bufferSize">1024</param>
+</result>
+
+
+</action>
+
+
+
+
+</package>
+
+</struts>
